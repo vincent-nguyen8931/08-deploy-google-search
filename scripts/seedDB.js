@@ -14,7 +14,6 @@ const recipeSeed = [
         description: "",
         image: "",
         link: "",
-
     }
 ]
 db.Recipe.remove({})
