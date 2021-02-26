@@ -7,7 +7,7 @@ mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/googlebooks"
 );
 
-const recipeSeed = [
+const bookSeed = [
     {
         title: "",
         authors: "",
@@ -17,7 +17,7 @@ const recipeSeed = [
     }
 ]
 db.Recipe.remove({})
-    .then(() => db.Recipe.collection.insertMany(recipeSeed))
+    .then(() => db.Recipe.collection.insertMany(bookSeed))
     .then(data => {
         console.log(data.result.n + " records inserted!");
         process.exit(0);
