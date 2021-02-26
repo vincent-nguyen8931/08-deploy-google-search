@@ -7,7 +7,6 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
- 
     authors: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -41,5 +40,5 @@ module.exports = function(sequelize, DataTypes) {
     },
  
   });
-  return Post;
+  return Book;
 };
