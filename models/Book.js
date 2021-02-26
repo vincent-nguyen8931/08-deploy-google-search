@@ -14,7 +14,6 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
- 
     description: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -22,7 +21,6 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
- 
     image: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -30,14 +28,13 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
- 
     link: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
-    },
+    }
  
   });
   return Book;
