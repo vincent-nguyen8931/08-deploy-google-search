@@ -1,0 +1,11 @@
+.jumbotron{
+    margin-bottom: 0px;
+background-position: 0% 25%;
+background-size: cover;
+background-repeat: no-repeat;
+
+
+border-style:solid;
+border: 5px;
+border-color: #fff;
+}

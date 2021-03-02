@@ -4,11 +4,39 @@ import React from "react";
 
 function results() {
     return (
-        <div
-            style={{ height: 300, clear: "both", paddingTop: 80, textAlign: "left" }}
-            className="jumbotron"
-        >
-            <h2>Results</h2>
+        <div className="jumbotron2">
+            <h2 className="display-4">Results:</h2>
+
+
+
+
+            <div class="row">
+                <div className="col-sm-12">
+                    <div className="card">
+                        <div className="card-body">
+                            <h5 className="card-title">Special title treatment</h5>
+                            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" className="btn btn-primary">View</a>
+                            <a href="#" className="btn btn-primary">Save</a>
+
+                        </div>
+                        <div className="col-sm-12">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h5 className="card-title">Special title treatment</h5>
+                                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" className="btn btn-primary">View</a>
+                                    <a href="#" className="btn btn-primary">Save</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
 
         </div>
     );
