@@ -3,7 +3,13 @@
     --primary-red: red;
     --primary-dark: rgba(255,255,255,0);
 }
-
+.nav-link{
+    color: black;
+    font-weight:500;
+    text-transform: uppercase;
+    letter-spacing: 0.0375rem;
+    cursor:pointer;
+}
 /* .logo{
     width: 15rem;
     height: 6rem;

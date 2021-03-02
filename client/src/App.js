@@ -17,6 +17,7 @@ function App() {
 
         {/* <Jumbotron /> */}
 
+        <Route exact path="/" component={Search} />
         <Route exact path="/search" component={Search} />
         {/* <Switch>
         <Route exact path="/" component={Search} />
