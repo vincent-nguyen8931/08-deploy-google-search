@@ -1,13 +1,13 @@
-import React from "react";
+// import React from "react";
 
 
-const BorderPage = (props) => {
-    return (
+// const BorderPage = (props) => {
+//     return (
 
-        <span className="block-example border border-dark"></span>
+//         <span className="block-example border border-dark"></span>
 
 
-    );
-}
+//     );
+// }
 
-export default BorderPage;
+// export default BorderPage;
