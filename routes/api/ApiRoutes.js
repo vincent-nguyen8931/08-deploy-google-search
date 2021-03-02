@@ -1,28 +1,46 @@
 var router = require("express").Router();
-// var controller;
+var Book = require("../../models/Book")
 
 // Get all saved books as json
-router
-.route("/api/books")
-.get(booksController.findAll)
-.post(booksController.create);
+router.get("/api/Book", (req, res) => {
+  Book.find({})
+  .sort()
+  .then(dbBook => {
+    res.json(dbBook);
+  })
+  .catch(err => {
+    res.status(400).json(err);
+  });
+});
 
-// Save neww books to database
-router
-.route("/api/books")
-.get(booksController.finadAll)
-.post(booksController.create);
+// Save new books to database
+router.post("/api/Book/", ({ body }, res) => {
+  Book.insert(body)
+  .then(dbBook => {
+    res.json(dbBook);
+  })
+  .catch(err => {
+    res.status(400).json(err);
+  });
+})
 
 
 // Delete books from database by mongo _id
-router
-  .route("/api/books/:id")
-  .get(booksController.findById)
-  .put(booksController.update)
-  .delete(booksController.remove);
+router.delete("/api/Book/:id", ({ body }, res) => {
+  Book.deleteOne(body)
+  .then(dbBook => {
+    res.json(dbBook);
+  })
+  .catch(err => {
+    res.status(400).json(err);
+  });
+})
+
 
 // /google will do api call and return results
 
 
 
 // * get everything upon page load
+
+module.exports = router;

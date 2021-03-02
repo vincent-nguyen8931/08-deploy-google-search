@@ -17,10 +17,7 @@ mongoose.connect(
   { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
 );
 
-app.use("/api", ApiRoutes);
-
-
-// Define API routes here
+app.use(require("./routes/api/ApiRoutes.js"));
 
 // Send every other request to the React app
 // Define any API routes before this runs
