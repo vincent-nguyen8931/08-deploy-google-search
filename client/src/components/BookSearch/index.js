@@ -10,9 +10,7 @@ function BookSearch() {
             <p className="lead">Book: </p>
             <input class="form-control" type="text" placeholder="Default input"></input>
 
-            <p classNameName="lead">
-                <a classNameName="btn btn-primary btn-lg" href="#" role="button">Search</a>
-            </p>
+            <a href="#" className="btn btn-primary">Search</a>
         </div >
 
 

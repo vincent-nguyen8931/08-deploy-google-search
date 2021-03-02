@@ -1,6 +1,7 @@
 import React from "react";
 // import logo from "../Untitled1.png"
 import css from "./style.css"
+import { Link } from "react-router-dom";
 function Nav() {
     return (
 
@@ -14,12 +15,12 @@ function Nav() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Search</a>
+                            <Link className="nav-link" to="/search">Search</Link>
                         </li>
 
 
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Saved</a>
+                            <Link className="nav-link" to="/saved">Saved</Link>
                         </li>
 
 
