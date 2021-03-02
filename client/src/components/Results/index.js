@@ -4,7 +4,7 @@ import React from "react";
 
 function results() {
     return (
-        <div className="jumbotron2">
+        <div className="jumbotron3">
             <h2 className="display-4">Results:</h2>
 
 
