@@ -1,41 +1,33 @@
-module.exports = function(sequelize, DataTypes) {
-  var Book = sequelize.define("Book", {
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
+
+
+var bookSchema = new Schema({
     title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      type: String,
+      trim: true,
+      required: "Enter title of book."
     },
     authors: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      type: String,
+      trim: true,
+      required: "Enter author of book."
     },
     description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      type: String,
+      trim: true,
+      required: "Enter description of book."
     },
     image: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      type: String,
+      trim: true
     },
     link: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      type: String,
+      trim: true
     }
- 
-  });
-  return Book;
-};
+});
+
+var Book = mongoose.model("Book", bookSchema);
+
+module.exports = Book;
