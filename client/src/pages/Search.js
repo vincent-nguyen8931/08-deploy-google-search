@@ -25,9 +25,7 @@ class Search extends Component {
 }
 
 //  render results of book search based on the user's text
-callAPI() {
-  fetch(// route created)
-}
+
   render() {
     return (
       <div>
