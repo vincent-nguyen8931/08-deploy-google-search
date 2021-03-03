@@ -18,6 +18,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+
   // find by id
   findById: function(req, res) {
     db.Book
@@ -25,6 +26,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  
   // update
   update: function(req, res) {
     db.Book

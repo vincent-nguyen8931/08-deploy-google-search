@@ -7,9 +7,6 @@ function results() {
         <div className="jumbotron3">
             <h2 className="display-4">Results:</h2>
 
-
-
-
             <div class="row">
                 <div className="col-sm-12">
                     <div className="card">

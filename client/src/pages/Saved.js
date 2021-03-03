@@ -6,15 +6,8 @@ import SavedBooks from "../components/SavedBooks";
 
 function Search() {
     return (
-
-
         <div>
-
             <SavedBooks />
-
-
-
-
         </div>
     )
 }

@@ -1,22 +1,21 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-
 var bookSchema = new Schema({
     title: {
       type: String,
       trim: true,
-      required: "Enter title of book."
+      required: true
     },
     authors: {
       type: String,
       trim: true,
-      required: "Enter author of book."
+      required: true
     },
     description: {
       type: String,
       trim: true,
-      required: "Enter description of book."
+      required: true
     },
     image: {
       type: String,
