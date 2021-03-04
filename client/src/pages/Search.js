@@ -29,7 +29,7 @@ class Search extends React.Component {
     }
 
     searchBook = query => {
-        API.getBook(query)
+        API.getBooks(query)
             .then(res => this.setState({ books: res.data.items.map(bookSchema => this.bSchema(bookSchema)) }))
             .catch(err => console.error(err));
     }
@@ -50,38 +50,49 @@ class Search extends React.Component {
 
     render() {
         return (
-            
+            <div>
+                <Form
+                    search={this.state.search}
+                    handleInputChange={this.handleInputChange}
+                    hanleFormSubmit={this.handleFormSubmit}
+                />
+
+                <div className="container">
+                    <h3>Results: </h3>
+                    <Results books={this.state.books} />
+                </div>
+            </div>
         )
     }
-
-    export default Search;
-
-
+}
+export default Search;
 
 
 
 
-class Search extends Component {
 
 
-    // make the api call to google books
-    saveBook = bookClicked => {
+    // class Search extends Component {
 
-        API.create({
-            title: bookClicked.title,
-            authors: bookClicked.authors,
-            description: bookClicked.description,
-            image: bookClicked.image,
-            link: bookClicked.link,
-        })
-            .then(res => console.log("Book saved!", res))
-            .catch(err => console.log("Error has occured in book creation.", err))
 
-    }
+    //     // make the api call to google books
+    //     saveBook = bookClicked => {
+
+    //         API.create({
+    //             title: bookClicked.title,
+    //             authors: bookClicked.authors,
+    //             description: bookClicked.description,
+    //             image: bookClicked.image,
+    //             link: bookClicked.link,
+    //         })
+    //             .then(res => console.log("Book saved!", res))
+    //             .catch(err => console.log("Error has occured in book creation.", err))
+
+    //     }
 
     //  render results of book search based on the user's text
 
-}
+// }
 
 
 
