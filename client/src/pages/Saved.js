@@ -1,22 +1,29 @@
-import React from "react";
-// 
+import React, { Component } from "react";
+import API from "../utils/API";
 import SavedBooks from "../components/SavedBooks";
 // import API from "../utils/API";
 // import { Input, TextArea, FormBtn } from "../components/Form";
 
-function Search() {
-    return (
+class Saved extends Component {
+    state = {
+        SavedBooks: [],
+    }
+
+    componentDidMount() {
+        API.SavedBooks()
+            .then(SavedBooks => this.setState({ SavedBooks: savedBooks }))
+            .catch(err => console.error(err));
+    }
+
+    render() {
+        return (
+            
+        )
+    }
 
 
-        <div>
-
-            <SavedBooks />
 
 
-
-
-        </div>
-    )
 }
 
 export default Search;
