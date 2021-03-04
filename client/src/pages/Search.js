@@ -85,3 +85,29 @@ render() {
 
 
 
+
+    // class Search extends Component {
+
+
+    //     // make the api call to google books
+    //     saveBook = bookClicked => {
+
+    //         API.create({
+    //             title: bookClicked.title,
+    //             authors: bookClicked.authors,
+    //             description: bookClicked.description,
+    //             image: bookClicked.image,
+    //             link: bookClicked.link,
+    //         })
+    //             .then(res => console.log("Book saved!", res))
+    //             .catch(err => console.log("Error has occured in book creation.", err))
+
+    //     }
+
+    //  render results of book search based on the user's text
+
+// }
+
+
+
+
