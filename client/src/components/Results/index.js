@@ -8,9 +8,6 @@ function results() {
             <h2 className="display-4">Results:</h2>
             {/* <ul className="list-group">{props.children}</ul> */}
 
-
-
-
             <div class="row">
                 <div className="col-sm-12">
                     <div className="card">

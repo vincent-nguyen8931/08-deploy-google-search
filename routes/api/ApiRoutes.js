@@ -1,5 +1,6 @@
 var router = require("express").Router();
 var Book = require("../../models/Book")
+var bookGet;
 
 // Get all saved books as json
 router.get("/api/Book", (req, res) => {
@@ -24,7 +25,6 @@ router.post("/api/Book/", ({ body }, res) => {
   });
 })
 
-
 // Delete books from database by mongo _id
 router.delete("/api/Book/:id", ({ body }, res) => {
   Book.deleteOne(body)
@@ -37,10 +37,6 @@ router.delete("/api/Book/:id", ({ body }, res) => {
 })
 
 
-// /google will do api call and return results
-
-
-
-// * get everything upon page load
+// * get everything upon page load. go through mongoose and retrieve everything
 
 module.exports = router;
