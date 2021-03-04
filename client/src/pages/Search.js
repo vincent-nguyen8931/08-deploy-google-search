@@ -1,13 +1,14 @@
 
-import React, { useEffect, useState } from "react";
-// import BookSearch from "../components/BookSearch";
-// import Results from "../components/Results";
+import React, { useEffect, useState, Component } from "react";
+import BookSearch from "../components/BookSearch";
+import ResultList from "../components/ResultList";
+import Results from "../components/Results";
 import API from "../utils/API";
 // import { Input, TextArea, FormBtn } from "../components/Form";
 
-class Search extends React.Component {
+class Search extends Component {
     state = {
-        Search: "",
+        search: "",
         books: []
     };
 
@@ -16,22 +17,24 @@ class Search extends React.Component {
 
     }
 
-    bSchema = bookSchema => {
-        return {
+    // make the api call to google books
+    saveBook = bookClicked => {
 
-            title: bookSchema.volumeInfo.title,
-            authors: bookSchema.volumeInfo.authors,
-            description: bookSchema.volumeInfo.description,
-            image: bookSchema.volumeInfo.imageLinks.thumbnail,
-            link: bookSchema.volumeInfo.previewLink
-        }
+      API.create({
+          title: bookClicked.title,
+          authors: bookClicked.authors,
+          description: bookClicked.description,
+          image: bookClicked.image,
+          link: bookClicked.link,
+      })
+          .then(res => console.log("Book saved!", res))
+          .catch(err => console.log("Error has occured in book creation.", err))
+  }
 
-    }
-
-    searchBook = query => {
-        API.getBook(query)
-            .then(res => this.setState({ books: res.data.items.map(bookSchema => this.bSchema(bookSchema)) }))
-            .catch(err => console.error(err));
+    searchBook = () => {
+        API.getBooks(this.state.search)
+            .then(res => this.setState({ books: res.data.items, search: "" }))
+            .catch(err => console.error(err))
     }
 
     handleInputChange = event => {
@@ -48,40 +51,36 @@ class Search extends React.Component {
     };
 
 
-    render() {
-        return (
-            
-        )
-    }
+render() {
+  return (
+    <div>
+     <div className="jumbotron" >
+        <h2 className="display-4">Book Search</h2>
+        <p className="lead">Book: </p>
+        <input
+          class="form-control"
+          type="text"
+          onChange={this.handleInputChange}
+          value={this.state.search}
+          name="search"
+          placeholder="Enter book name"></input>
+
+        <button onClick={this.handleFormSubmit}
+          className="btn btn-primary">Search</button>
+
+      </div >
+    <ResultList
+    books={this.state.books}
+    saveBooks={this.saveBook}
+    />
+    </div>
+  )
+}
+    
+  }
 
     export default Search;
 
-
-
-
-
-
-class Search extends Component {
-
-
-    // make the api call to google books
-    saveBook = bookClicked => {
-
-        API.create({
-            title: bookClicked.title,
-            authors: bookClicked.authors,
-            description: bookClicked.description,
-            image: bookClicked.image,
-            link: bookClicked.link,
-        })
-            .then(res => console.log("Book saved!", res))
-            .catch(err => console.log("Error has occured in book creation.", err))
-
-    }
-
-    //  render results of book search based on the user's text
-
-}
 
 
 
