@@ -23,14 +23,6 @@ export default {
 
   },
 
-  // update
-  // update: function(req, res) {
-  //   db.Book
-  //     .findOneAndUpdate({ _id: req.params.id }, req.body)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
-
   // Delete books from database by mongo _id
   delete: function (req, res) {
     return axios.delete("/api/Book/:id")

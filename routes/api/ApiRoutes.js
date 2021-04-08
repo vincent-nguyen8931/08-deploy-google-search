@@ -15,7 +15,7 @@ router.get("/api/Book", (req, res) => {
 });
 
 // Save new books to database
-router.post("/api/Book/", ({ body }, res) => {
+router.post("/api/Book", ({ body }, res) => {
   Book.insert(body)
   .then(dbBook => {
     res.json(dbBook);
